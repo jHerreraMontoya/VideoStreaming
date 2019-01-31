@@ -28,7 +28,7 @@ _• v1.0.0 - Se añade archivo videoStreaming.html y VideoSystemObjects.js al r
       •Objeto User
       •Objeto Coordinate
 ```
-_• v1.0.1 - Se añade el archivo videoSystem.js, BaseException.js y testVideoSystem al repositorio_
+_• v1.0.1 - Se añade el archivo videoSystem.js, BaseException.js y testVideoSystem.js al repositorio_
 ```
 • videoSystem.js
   En este archivo encontramos la creacción del Objeto VideoSystem con la implementación de un 
@@ -48,4 +48,13 @@ _• v1.0.1 - Se añade el archivo videoSystem.js, BaseException.js y testVideoS
 ```
 • BaseException.js
   En este archivo encontramos los mensajes de error que aparecerán cuando aparezca algún tipo de excepción
+```
+_• v1.0.2 - Se han realizado modificaciones en el archivo videoSystem.js y testVideoSystem.js_
+```
+• videoSystem.js
+Modificación en los diferentes métodos get que la componen.
+```
+```
+• testVideoSystem.js
+Modificación del texto de prueba.
 ```
