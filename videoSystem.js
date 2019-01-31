@@ -12,6 +12,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 
 			/* Definición del atributo name */
 			var _name = "";
+
 			Object.defineProperty(this, 'name', {
 				get:function(){
 					return _name;
@@ -42,7 +43,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 			});	
 
 			//Comprobamos si se encuentra algún username en la posición del array
-			function getUserNamePosition(user){
+			this.getUserNamePosition = function (user){
 				if (!(user instanceof User)) { 
 					throw new UserVideoSystemException ();
 				}		
@@ -52,10 +53,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _users.findIndex(compareElements);		
-			}
+			};
 
 			//Comprobamos si se encuentra algún email en la posición del array
-			function getUserEmailPosition(user){
+			this.getUserEmailPosition = function(user){
 				if (!(user instanceof User)) { 
 					throw new UserVideoSystemException ();
 				}		
@@ -65,7 +66,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _users.findIndex(compareElements);		
-			}
+			};
 
 			//Añade un nuevo usuario al gestor
 			this.addUser = function(user){
@@ -77,8 +78,8 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("user");
 				}
 				
-				var positionUserName = getUserNamePosition(user); 
-				var positionEmail = getUserEmailPosition(user);
+				var positionUserName = this.getUserNamePosition(user); 
+				var positionEmail = this.getUserEmailPosition(user);
 
 				if (positionUserName === -1){
 					if(positionEmail === -1){
@@ -95,7 +96,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _users.length;
-			}
+			};
 
 			//Elimina un usuario del gestor
 			this.removeUser = function(user){
@@ -107,7 +108,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("user");
 				}
 
-				var position = getUserPosition(user); 	
+				var position = this.getUserPosition(user); 	
 
 				if (position !== -1){
 
@@ -119,10 +120,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				
 				}
 				return _users.length;
-			}
+			};
 
 			//Dado un usuario, devuelve la posición de ese usuario en el array de usuario o -1 si no lo encontramos.
-			function getUserPosition(user){
+			this.getUserPosition = function (user){
 				if (!(user instanceof User)) { 
 					throw new UserVideoSystemException ();
 				}		
@@ -132,7 +133,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _users.findIndex(compareElements);		
-			}
+			};
 
 
 			/* Definición del atributo categories como array para contener todas las categorías del sistema. */
@@ -162,7 +163,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("category");
 				}
 
-				var position = getCategoryPosition(category); 	
+				var position = this.getCategoryPosition(category); 	
 
 				if (position === -1){
 					_categories.push(
@@ -177,7 +178,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _categories.length;
-			}
+			};
 
 			//Elimina una categoria del sistema
 			this.removeCategory = function(category){
@@ -189,7 +190,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("category");
 				}
 
-				var position = getCategoryPosition(category); 	
+				var position = this.getCategoryPosition(category); 	
 				
 				if (position !== -1){
 					if (category.name !== _categories.name){
@@ -201,10 +202,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 					
 				return _categories.length;
-			}
+			};
 
 			//Dado una categoría, devuelve la posición de esa categoría en el array de categorías o -1 si no lo encontramos.
-			function getCategoryPosition(category){
+			this.getCategoryPosition = function (category){
 				if (!(category instanceof Category)) { 
 					throw new CategoryVideoSystemException("Category");
 				}		
@@ -214,7 +215,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _categories.findIndex(compareElements);		
-			}
+			};
 
 			// Definición del atributo productions como array para contener todas las productiones del sistema. */
 			var _productions = []; //array de producciones
@@ -243,7 +244,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("production");
 				}
 
-				var position = getProductionPosition(production); 	
+				var position = this.getProductionPosition(production); 	
 
 				if (position === -1){
 					_productions.push(
@@ -256,7 +257,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _productions.length;
-			}
+			};
 
 			//Elimina una producción del sistema
 			this.removeProduction = function(production){
@@ -269,7 +270,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("production");
 				}
 
-				var position = getProductionPosition(production); 	
+				var position = this.getProductionPosition(production); 	
 
 				if (position !== -1){
 					if (production.title !== _productions.title){
@@ -282,10 +283,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _productions.length;
-			}
+			};
 
 			//Dado una production, devuelve la posición de esa production en el array de producciones o -1 si no lo encontramos.
-			function getProductionPosition(production){
+			this.getProductionPosition = function (production){
 				if (!(production instanceof Production)) { 
 					throw new ProdcutionVideoSystemException("Production");
 				}		
@@ -295,7 +296,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _productions.findIndex(compareElements);		
-			}
+			};
 
 			/* Definición del atributo actors como array para contener todas los actores del sistema. */
 			var _actors = []; //array de actores.
@@ -324,7 +325,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("actor");
 				}
 				
-				var position = getActorPosition(actor); 	
+				var position = this.getActorPosition(actor); 	
 				if (position === -1){
 					_actors.push(
 						{
@@ -338,7 +339,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _actors.length;
-			}
+			};
 
 			//Elimina un actor del sistema
 			this.removeActor = function(actor){
@@ -354,7 +355,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				
 				}
 
-				var position = getActorPosition(actor); 	
+				var position = this.getActorPosition(actor); 	
 
 				if (position !== -1){
 					if (actor.name !== _actors.name){
@@ -365,11 +366,11 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new ActorNoExistsException();
 				}
 				return _actors.length;
-			}
+			};
 
 
 			//Dado un Actor, devuelve la posición de ese actor en el array de actores o -1 si no lo encontramos.
-			function getActorPosition(actor){
+			this.getActorPosition = function (actor){
 				if (!(actor instanceof Person)) { 
 					throw new ActorVideoSystemException("Person");
 				}		
@@ -379,7 +380,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _actors.findIndex(compareElements);		
-			}
+			};
 
 			/* Definición del atributo directors como array para contener todas los directores del sistema.*/
 			var _directors = []; //array de actores.
@@ -413,7 +414,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 
 				}
 
-				var position = getDirectorPosition(director); 
+				var position = this.getDirectorPosition(director); 
 
 				if (position === -1){
 					_directors.push(
@@ -428,7 +429,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _directors.length;
-			}
+			};
 
 			//Elimina un director del sistema
 			this.removeDirector = function(director){
@@ -442,7 +443,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 					throw new NullParamException("director");
 				}
 
-				var position = getDirectorPosition(director); 	
+				var position = this.getDirectorPosition(director); 	
 
 				if (position !== -1){
 					if (director.name !== _directors.name){
@@ -453,10 +454,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 
 				return _directors.length;
-			}
+			};
 
 			//Dado un director, devuelve la posición de ese director en el array de directores o -1 si no lo encontramos.
-			function getDirectorPosition(director){
+			this.getDirectorPosition = function (director){
 				if (!(director instanceof Person)) { 
 					throw new DirectorVideoSystemException("Person");
 				}		
@@ -466,8 +467,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}
 				
 				return _directors.findIndex(compareElements);		
-			}
+			};
 			
+
+
 		} //Fin constructor VideoSystem
 		VideoSystem.prototype = {}; 
 		VideoSystem.prototype.constructor = VideoSystem;
