@@ -28,3 +28,24 @@ _• v1.0.0 - Se añade archivo videoStreaming.html y VideoSystemObjects.js al r
       •Objeto User
       •Objeto Coordinate
 ```
+_• v1.0.1 - Se añade el archivo videoSystem.js, BaseException.js y testVideoSystem al repositorio_
+```
+• videoSystem.js
+  En este archivo encontramos la creacción del Objeto VideoSystem con la implementación de un 
+  Singleton y diferentes objetos con sus métodos correspondientes y excepciones.
+      •Getter/Setter name
+      •Categories -> Getter categories, addCategory, removeCategory
+      •User -> Getter users, addUser, removeUser
+      •Production -> Getter productions, addProduction, removeProduction
+      •Actor -> Getter actors, addActor, removeActor
+      •Director -> Getter directors, addDirector, removeDirector
+```
+```
+• testVideoSystem.js
+  En este archivo encontramos el test de la creacción de los diferentes objetos, 
+  añadir, eliminar y ver si se generán las diferentes excepciones.
+```
+```
+• BaseException.js
+  En este archivo encontramos los mensajes de error que aparecerán cuando aparezca algún tipo de excepción
+```
