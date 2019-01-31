@@ -571,7 +571,7 @@
         try {
             console.log("Añadimos el primer director: Nombre: " + d1.name + ", Apellido: " + d1.lastname1 + ", Fecha Nacimiento: " + d1.born.toLocaleDateString() + ", la longitud es: "+VSystem.addDirector(d1));
         } catch (err) {
-            console.log("Se ha intentado añadir el actor: Nombre: " + d1.name + ", Apellido: " + d1.lastname1 + ", Fecha Nacimiento: " +  d1.born.toLocaleDateString() + " -> " + err);
+            console.log("Se ha intentado añadir el director: Nombre: " + d1.name + ", Apellido: " + d1.lastname1 + ", Fecha Nacimiento: " +  d1.born.toLocaleDateString() + " -> " + err);
         }
 
         console.log("--------------------------------------------------");
@@ -602,6 +602,7 @@
        
     }
 
+
         console.log("\n######_testCategory_######");
             testCategory(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente las categorias
         console.log("######_FIN_tesCategory_######");
@@ -621,6 +622,7 @@
         console.log("\n######_testDirectors_######");
             testDirector(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente los directores
         console.log("######_FIN_testDirectors_######");
+
         
         
 
