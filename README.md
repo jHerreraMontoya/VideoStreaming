@@ -58,3 +58,22 @@ Modificación en los diferentes métodos get que la componen.
 • testVideoSystem.js
 Modificación del texto de prueba.
 ```
+
+_• v1.0.3 - Se han realizado modificaciones en el archivo videoSystem.js,testVideoSystem.js_ y BaseException.js
+```
+• videoSystem.js
+Nuevos Métodos:
+  -AssignCategory, DeassignCaterogy y getProductionsCategory
+  -AssignDirector, DeassignDirector y getProductionsDirector
+  -AssignActor, DeassignActor y getProductionsActor
+```
+```
+• testVideoSystem.js
+Realizamos las operaciones de testeo de los nuevos métodos:
+ -Asignar categoria a producciones, deasignar categoria a producciones y recorremos las producciones que pertenecen 
+  a dicha categoria
+  -Asignar director a producciones, deasignar director a producciones y recorremos las producciones que pertenecen 
+  a dicho director
+   -Asignar actor a producciones, deasignar actor a producciones y recorremos las producciones que pertenecen 
+  a dicho actor
+```
