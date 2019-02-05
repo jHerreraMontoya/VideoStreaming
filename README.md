@@ -70,10 +70,14 @@ Nuevos Métodos:
 ```
 • testVideoSystem.js
 Realizamos las operaciones de testeo de los nuevos métodos:
- -Asignar categoria a producciones, deasignar categoria a producciones y recorremos las producciones que pertenecen 
-  a dicha categoria
-  -Asignar director a producciones, deasignar director a producciones y recorremos las producciones que pertenecen 
-  a dicho director
-   -Asignar actor a producciones, deasignar actor a producciones y recorremos las producciones que pertenecen 
-  a dicho actor
+ -Asignar categoria a producciones, deasignar categoria a producciones y recorremos las producciones que 
+ pertenecen a dicha categoria
+  -Asignar director a producciones, deasignar director a producciones y recorremos las producciones que 
+  pertenecen a dicho director
+   -Asignar actor a producciones, deasignar actor a producciones y recorremos las producciones que 
+   pertenecen a dicho actor
+```
+```
+• BaseException.js
+Creamos las excepciones pertenecientes a los métodos AssignCategory, AssignDirector y AssignActor
 ```
