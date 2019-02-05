@@ -46,18 +46,22 @@
             var categoria1 = new Category("Romántica");
             var categoria2 = new Category("Drama");
             var categoria3 = new Category("Comedia","Para echarse unas risas");
+            var categoria4 = new Category("Ciencia Ficción");
+            var categoria5 = new Category("Acción & Aventura")
             console.log("Objetos Pertenecientes a Category: ");
             console.log(categoria1.toString());
             console.log(categoria2.toString());
             console.log(categoria3.toString());
+            console.log(categoria4.toString());
+            console.log(categoria5.toString());
         } catch (err) {
             console.log(err);
         }
         //Creamos un objetos Category con fallos
         console.log("--------------------------------------------------");
         try {
-            var categoria4 = new Category();
-            console.log(categoria4.toString());
+            var categoria6 = new Category();
+            console.log(categoria6.toString());
         } catch (err) { 
             console.log("Objetos Category con fallos: ");
             console.log(err.toString());
@@ -150,10 +154,12 @@
             var movie1 = new Movie("Harry Potter y El Cáliz de Fuego","11/25/2005",resource1 + "\n","Latidud: " + coordinate1.getSexagesimalLatitude() + " Longitud: " + coordinate1.getSexagesimalLongitude());
             var movie2 = new Movie("Guardianes de la Galaxia Vol 1","08/14/2004",resource2 + "\n","Latidud: " + coordinate2.getSexagesimalLatitude() + " Longitud: " + coordinate2.getSexagesimalLongitude());
             var movie3 = new Movie("Vengadores","07/07/2005",resource3 + "\n","Latidud: " + coordinate3.getSexagesimalLatitude() + ", Longitud: " + coordinate3.getSexagesimalLongitude());
+            var movie4 = new Movie("Antes de ti","07/01/2016",resource3 + "\n","Latidud: " + coordinate3.getSexagesimalLatitude() + ", Longitud: " + coordinate3.getSexagesimalLongitude());
             console.log("Objetos Pertenecientes a Movie: ");
             console.log(movie1.toString());
             console.log(movie2.toString());
             console.log(movie3.toString());
+            console.log(movie4.toString());
         } catch (err) {
             console.log(err.toString());
         }
@@ -161,23 +167,23 @@
         //Creamos objetos Movie con fallos
         console.log("--------------------------------------------------");
         try {
-            var movie4 = new Movie();
-            console.log(movie4.toString());
+            var movie5 = new Movie();
+            console.log(movie5.toString());
         } catch (err) { 
             console.log("Objetos Movie con fallos: ");
             console.log(err.toString());
         }
 
         try {
-            var movie5 = new Movie("Guardianes de la Galaxia Vol 1");
-            console.log(movie5.toString());
+            var movie6 = new Movie("Guardianes de la Galaxia Vol 1");
+            console.log(movie6.toString());
         } catch (err) { 
             console.log(err.toString());
         }
 
         try {
-            var movie5 = new Movie("Guardianes de la Galaxia Vol 1","08/12/2003");
-            console.log(movie5.toString());
+            var movie7 = new Movie("Guardianes de la Galaxia Vol 1","08/12/2003");
+            console.log(movie7.toString());
         } catch (err) { 
             console.log(err.toString());
         }
@@ -209,10 +215,12 @@
             var serie1 = new Serie("The Big Bang Theory","09/24/2007",[season1,season2]);
             var serie2 = new Serie("Anatomia de Grey","03/27/2005",[season1,season2]);
             var serie3 = new Serie("The Good Doctor","09/25/2017",[season1,season2]);
+            var serie4 = new Serie("Allí Abajo","04/07/2015",[season1,season2]);
             console.log("Objetos Pertenecientes a Serie: ");
             console.log(serie1.toString());
             console.log(serie2.toString());
             console.log(serie3.toString());
+            console.log(serie4.toString());
         } catch (err) {
             console.log(err.toString());
         }
@@ -220,16 +228,16 @@
         //Creamos objetos Serie con fallos
         console.log("--------------------------------------------------");
         try {
-            var serie4 = new Serie();
-            console.log(serie4.toString());
+            var serie5 = new Serie();
+            console.log(serie5.toString());
         } catch (err) { 
             console.log("Objetos Serie con fallos: ");
             console.log(err.toString());
         }
         
         try {
-            var serie5 = new Serie("Stranger Things");
-            console.log(serie5.toString());
+            var serie6 = new Serie("Stranger Things");
+            console.log(serie6.toString());
         } catch (err) { 
             console.log(err.toString());
         }
@@ -287,13 +295,15 @@
             console.log("Error: " + err.toString());
         }
         
-        function testCategory(){
+        console.log("\n######_testCategory_######");
             console.log("--------------------------------------------------");
             //Añadimos las categorias
             try {
                 console.log("Añadimos la primera categoria: " + categoria1.name + ", la longitud es: " + VSystem.addCategory(categoria1));
                 console.log("Añadimos la segunda categoria: " + categoria2.name + ", la longitud es: " + VSystem.addCategory(categoria2));
                 console.log("Añadimos la tercera categoria: " + categoria3.name + ", la longitud es: " + VSystem.addCategory(categoria3));
+                console.log("Añadimos la tercera categoria: " + categoria4.name + ", la longitud es: " + VSystem.addCategory(categoria4));
+                console.log("Añadimos la tercera categoria: " + categoria5.name + ", la longitud es: " + VSystem.addCategory(categoria5));
             } catch (err) {
                 console.log("Error: " + err.toString());
             }
@@ -340,9 +350,9 @@
             } catch (err) {
                 console.log("Se ha intentado eliminar la categoria: " + categoria2.name + " -> " + err);
             }
-        }
-
-    function testUser(){
+    console.log("######_FIN_testCategory_######");
+    
+    console.log("\n######_testUser_######");
         console.log("--------------------------------------------------");
         //Añadimos los usuarios
         try {
@@ -395,18 +405,23 @@
         } catch (err) {
             console.log("Se ha intentado eliminar el usuario: Username: " + u4.username + ", Email: " + u4.email + ", Password "+ u4.password+ " -> " + err);
         }
-    
-    }   
+console.log("######_FIN_testUser_######");
 
 
-    function testProduction(){
+console.log("\n######_testProductions_######");
+            
         console.log("--------------------------------------------------");
         //Añadimos la producciones
         try {
             console.log("Añadimos la primera producción: Movie: " + movie1.title + ", la longitud es: "+VSystem.addProduction(movie1));
-            console.log("Añadimos la segunda producción: Serie: " + serie1.title + ", la longitud es: "+VSystem.addProduction(serie1));
-            console.log("Añadimos la tercera producción: Movie: " + movie2.title + ", la longitud es: "+VSystem.addProduction(movie2));
-            console.log("Añadimos la cuarta producción: Serie: " + serie3.title + ", la longitud es: "+VSystem.addProduction(serie3));
+            console.log("Añadimos la segunda producción: Movie: " + movie2.title + ", la longitud es: "+VSystem.addProduction(movie2));
+            console.log("Añadimos la tercera producción: Movie: " + movie3.title + ", la longitud es: "+VSystem.addProduction(movie3));
+            console.log("Añadimos la cuarta producción: Movie: " + movie4.title + ", la longitud es: "+VSystem.addProduction(movie4));
+            console.log("Añadimos la primera producción: Serie: " + serie1.title + ", la longitud es: "+VSystem.addProduction(serie1));
+            console.log("Añadimos la segunda producción: Serie: " + serie2.title + ", la longitud es: "+VSystem.addProduction(serie2));
+            console.log("Añadimos la tercera producción: Serie: " + serie3.title + ", la longitud es: "+VSystem.addProduction(serie3));
+            console.log("Añadimos la cuarta producción: Serie: " + serie4.title + ", la longitud es: "+VSystem.addProduction(serie4));
+            
         } catch (err) {
             console.log("Error: " + err.toString());
         }
@@ -424,7 +439,7 @@
         console.log("--------------------------------------------------");
         //Añadimos una Producción ya existente
         try {
-            console.log("Añadimos la cuarta producción: Serie: " + serie3.title + ", la longitud es: "+VSystem.addProduction(serie3));
+            console.log("Añadimos la tercera producción: Serie: " + serie3.title + ", la longitud es: "+VSystem.addProduction(serie3));
         } catch (err) {
             console.log("Se ha intentado añadir cuarta produccón: Serie: " + serie3.title + " -> " + err);
         }
@@ -432,7 +447,7 @@
         console.log("--------------------------------------------------");
         //Eliminamos una Producción
         try {
-            console.log("Eliminamos la cuarta producción: Serie: " + serie3.title + ", la longitud es: " + VSystem.removeProduction(serie3));
+            console.log("Eliminamos la segunda producción: Serie: " + serie2.title + ", la longitud es: " + VSystem.removeProduction(serie2));
         } catch (err) {
            console.log("Error: " + err.toString());
         }
@@ -454,9 +469,9 @@
         } catch (err) {
             console.log("Se ha intentado eliminar la cuarta produccón: Serie: " + serie3.title + " -> " + err);
         }
-    }
-
-    function testActor(){
+    console.log("######_FIN_testProductions_######");
+    
+    console.log("\n######_testActors_######");
         try {
             var a1 = new Person("Benedict","Cumberbatch","07/19/1976");
             var a2 = new Person("Bradley","Cooper","01/05/1975");
@@ -466,7 +481,7 @@
             console.log(a1.toString());
             console.log(a2.toString());
             console.log(a3.toString());
-            console.log(a3.toString());
+            console.log(a4.toString());
         } catch (err) {
             console.log(err.toString());
         }
@@ -526,9 +541,10 @@
            console.log("Se ha intentado Eliminar el actor: Nombre: " + a4.name + ", Apellido: " + a4.lastname1 + ", Fecha Nacimiento: " +  a4.born.toLocaleDateString() + " -> " + err);
         }      
 
-    }
+    console.log("######_FIN_testActors_######");
 
-    function testDirector(){
+
+    console.log("\n######_testDirectors_######");
 
         try {
             var d1 = new Person("Steven","Spielberg","12/18/1976");
@@ -600,31 +616,266 @@
            console.log("Se ha intentado Eliminar el director: Nombre: " + d4.name + ", Apellido: " + d4.lastname1 + ", Fecha Nacimiento: " +  d4.born.toLocaleDateString() + " -> " + err);
         }      
        
+    console.log("######_FIN_testDirectors_######");
+
+    console.log("\n######_testCategoryProductions_######");
+    console.log("--------------------------------------------------");
+    //Asignamos una produccion a una categoria
+    try{
+        console.log("Asignamos la production " + movie1.title + " a la categoria " + categoria5.name + " : " + VSystem.assignCategory(categoria5,movie1));
+        console.log("Asignamos la production " + movie2.title + " a la categoria " + categoria5.name + " : " + VSystem.assignCategory(categoria5,movie2));
+        console.log("Asignamos la production " + movie3.title + " a la categoria " + categoria5.name + " : " + VSystem.assignCategory(categoria5,movie3));
+        console.log("Asignamos la production " + movie4.title + " a la categoria " + categoria1.name + " : " + VSystem.assignCategory(categoria1,movie4));
+        console.log("Asignamos la production " + serie1.title + " a la categoria " + categoria3.name + " : " + VSystem.assignCategory(categoria3,serie1));
+        console.log("Asignamos la production " + serie3.title + " a la categoria " + categoria4.name + " : " + VSystem.assignCategory(categoria4,serie3));
+        console.log("Asignamos la production " + serie4.title + " a la categoria " + categoria3.name + " : " + VSystem.assignCategory(categoria3,serie4)); 
+    } catch (err) { 
+        console.log(err.toString());
+    }
+
+    console.log("--------------------------------------------------");
+    //Intentamos asignar una production con una categoria ya asignada
+    try {
+        console.log("Asignamos la production " + serie1.title + " a la categoria " + categoria3.name + " : " + VSystem.assignCategory(categoria3,serie1));
+	} catch (err) {
+		console.log("Se ha intentado asignar de nuevo la produccion " + serie1.title + " a la categoria " + categoria3.name + " -> " + err);
+    }
+    
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones de las categorias que hay --> Estas hacen referencía a la categoría 1 -> Romántica
+    console.log("Recorremos las producciones de la categoria " + categoria1.name);
+    var productions = VSystem.getProductionsCategory(categoria1);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones de las categorias que hay --> Estas hacen referencía a la categoría 3 -> Comedia
+    console.log("Recorremos las producciones de la categoria " + categoria3.name);
+    var productions = VSystem.getProductionsCategory(categoria3);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones de las categorias que hay --> Estas hacen referencía a la categoría 4 -> Ciencia Ficción
+    console.log("Recorremos las producciones de la categoria " + categoria4.name);
+    var productions = VSystem.getProductionsCategory(categoria4);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones de las categorias que hay --> Estas hacen referencía a la categoría 5 -> Acción&Aventura
+    console.log("Recorremos las producciones de la categoria " + categoria5.name);
+    var productions = VSystem.getProductionsCategory(categoria5);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Deasignamos una production perteneciente a una categoría
+    try {
+        console.log("Quitamos la production " + movie3.title + " que pertecene a la categoría " + categoria5.name + " : " + VSystem.deassignCategory(categoria5,movie3));
+    } catch (err) {
+        console.log(err.toString());
+    }
+
+    console.log("-----------------------------------------------");
+    //Intentamos desasignar una production con una categoria ya desasignada
+    try {
+        console.log("Intentamos quitar la production " + movie3.title + " a la categoria " + categoria5.name + " : " + VSystem.deassignCategory(categoria5,movie3));
+	} catch (err) {
+		console.log("Se ha intentado quitar de nuevo la produccion " + movie3.title + " a la categoria " + categoria5.name + " -> " + err);
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones de las categorias que hay --> Estas hacen referencía a la categoría 5 -> Acción&Aventura
+    console.log("Recorremos las producciones de la categoria " + categoria5.name);
+    var productions = VSystem.getProductionsCategory(categoria5);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+    console.log("\n######_FIN_testCategoryProductions_######");
+
+
+
+
+
+    console.log("\n######_testDirectorProductions_######");
+    console.log("--------------------------------------------------");
+    //Asignamos una produccion a un director
+    try{
+        console.log("Asignamos la production " + movie1.title + " al director " + d1.name + " " + d1.lastname1 + " : " + VSystem.assignDirector(d1,movie1));
+        console.log("Asignamos la production " + movie2.title + " al director " + d1.name + " " + d1.lastname1 + " : " + VSystem.assignDirector(d1,movie2));
+        console.log("Asignamos la production " + movie3.title + " al director " + d1.name + " " + d1.lastname1 + " : " + VSystem.assignDirector(d1,movie3));
+        console.log("Asignamos la production " + movie4.title + " al director " + d2.name + " " + d2.lastname1 + " : " + VSystem.assignDirector(d2,movie4));
+        console.log("Asignamos la production " + serie1.title + " al director " + d2.name + " " + d2.lastname1 + " : " + VSystem.assignDirector(d2,serie1));
+        console.log("Asignamos la production " + serie3.title + " al director " + d3.name + " " + d3.lastname1 + " : " + VSystem.assignDirector(d3,serie3));
+        console.log("Asignamos la production " + serie4.title + " al director " + d3.name + " " + d3.lastname1 + " : " + VSystem.assignDirector(d3,serie4));
+    } catch (err) { 
+        console.log(err.toString());
+    }
+
+    console.log("--------------------------------------------------");
+    //Intentamos asignar una production con un director ya asignado
+    try {
+        console.log("Asignamos la production " + movie1.title + " al director " + d1.name + " " + d1.lastname1 + " : " + VSystem.assignDirector(d1,movie1));
+	} catch (err) {
+		console.log("Se ha intentado asignar de nuevo la produccion " + movie1.title + " al director " + d1.name + " " + d1.lastname1 + " -> " + err);
+    }
+    
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del director que hay --> Estas hacen referencía al d1-> Steven Spilberg
+    console.log("Recorremos las producciones del director " + d1.name + " " + d1.lastname1);
+    var productions = VSystem.getProductionsDirector(d1);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del director que hay --> Estas hacen referencía al d2-> George Lucas
+    console.log("Recorremos las producciones del director " + d2.name + " " + d2.lastname1);
+    var productions = VSystem.getProductionsDirector(d2);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del director que hay --> Estas hacen referencía al d3-> Sofia Coppola
+    console.log("Recorremos las producciones del director " + d3.name + " " + d3.lastname1);
+    var productions = VSystem.getProductionsDirector(d3);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
     }
 
 
-        console.log("\n######_testCategory_######");
-            testCategory(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente las categorias
-        console.log("######_FIN_tesCategory_######");
-
-        console.log("\n######_testUser_######");
-            testUser(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente los usuarios
-        console.log("######_FIN_testUser_######");
-        
-        console.log("\n######_testProductions_######");
-            testProduction(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente las producciones
-        console.log("######_FIN_testProductions_######");
-        
-        console.log("\n######_testActors_######");
-            testActor(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente los actores
-        console.log("######_FIN_testActors_######");
-        
-        console.log("\n######_testDirectors_######");
-            testDirector(); //Test para comprobar que se añaden, se eliminan y se muestran correctamente los directores
-        console.log("######_FIN_testDirectors_######");
-
-        
-        
-
+    console.log("-----------------------------------------------");
+    //Deasignamos una production perteneciente a un director
+    try {
+        console.log("Quitamos la production " + serie4.title + " que pertecene al director " + d3.name + " " + d3.lastname1 + " : " + VSystem.deassignDirector(d3,serie4));
+    } catch (err) { 
+        console.log(err.toString());
     }
-    window.onload = test;
+
+    console.log("-----------------------------------------------");
+    //Intentamos desasignar una production con un director ya desasignada
+    try {
+        console.log("Quitamos la production " + serie4.title + " que pertecene al director " + d3.name + " " + d3.lastname1 + " : " + VSystem.deassignDirector(d3,serie4));
+	} catch (err) {
+		console.log("Se ha intentado quitar de nuevo la produccion " + serie4.title + " que pertecene al director " + d3.name + " " + d3.lastname1 + " -> " + err);
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del director que hay --> Estas hacen referencía al d3-> Sofia Coppola
+    console.log("Recorremos las producciones del director " + d3.name + " " + d3.lastname1);
+    var productions = VSystem.getProductionsDirector(d3);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+    console.log("\n######_FIN_testDirectorProductions_######");
+
+
+
+    console.log("\n######_testActorProductions_######");
+    console.log("--------------------------------------------------");
+    //Asignamos una produccion a un actor
+    try{
+        console.log("Asignamos la production " + movie1.title + " al actor " + a1.name + " " + a1.lastname1 + " : " + VSystem.assignActor(a1,movie1));
+        console.log("Asignamos la production " + movie2.title + " al actor " + a1.name + " " + a1.lastname1 + " : " + VSystem.assignActor(a1,movie2));
+        console.log("Asignamos la production " + movie3.title + " al actor " + a1.name + " " + a1.lastname1 + " : " + VSystem.assignActor(a1,movie3));
+        console.log("Asignamos la production " + movie4.title + " al actor " + a3.name + " " + a3.lastname1 + " : " + VSystem.assignActor(a3,movie4));
+        console.log("Asignamos la production " + serie1.title + " al actor " + a2.name + " " + a2.lastname1 + " : " + VSystem.assignActor(a2,serie1));
+        console.log("Asignamos la production " + serie3.title + " al director " + a3.name + " " + a3.lastname1 + " : " + VSystem.assignActor(a3,serie3));
+        console.log("Asignamos la production " + serie4.title + " al director " + a2.name + " " + a2.lastname1 + " : " + VSystem.assignActor(a2,serie4));
+    } catch (err) { 
+        console.log(err.toString());
+    }
+
+    console.log("--------------------------------------------------");
+    //Intentamos asignar una production con un director ya asignado
+    try {
+        console.log("Asignamos la production " + movie1.title + " al actor " + a1.name + " " + a1.lastname1 + " : " + VSystem.assignActor(a1,movie1));
+	} catch (err) {
+		console.log("Se ha intentado asignar de nuevo la produccion " + movie1.title + " al actor " + a1.name + " " + a1.lastname1 + " -> " + err);
+    }
+    
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del actor que hay --> Estas hacen referencía al a1-> Benedict Cumberbatch
+    console.log("Recorremos las producciones del actor " + a1.name + " " + a1.lastname1);
+    var productions = VSystem.getProductionsActor(a1);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del actor que hay --> Estas hacen referencía al a2-> Bradley Cooper
+    console.log("Recorremos las producciones del actor " + a2.name + " " + a2.lastname1);
+    var productions = VSystem.getProductionsActor(a2);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del actor que hay --> Estas hacen referencía al a3-> Emilia Clarke
+    console.log("Recorremos las producciones del actor " + a3.name + " " + a3.lastname1);
+    var productions = VSystem.getProductionsActor(a3);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+
+
+    console.log("-----------------------------------------------");
+    //Deasignamos una production perteneciente a un actor
+    try {
+        console.log("Quitamos la production " + serie3.title + " que pertecene al actor " + a3.name + " " + a3.lastname1 + " : " + VSystem.deassignActor(a3,serie3));
+    } catch (err) { 
+        console.log(err.toString());
+    }
+
+    console.log("-----------------------------------------------");
+    //Intentamos desasignar una production con un director ya desasignada
+    try {
+        console.log("Quitamos la production " + serie3.title + " que pertecene al actor " + a3.name + " " + a3.lastname1 + " : " + VSystem.deassignActor(a3,serie3));
+	} catch (err) {
+		console.log("Se ha intentado quitar de nuevo la produccion " + serie3.title + " que pertecene al actor " + a3.name + " " + a3.lastname1 + " -> " + err);
+    }
+
+    console.log("-----------------------------------------------");
+    //Mostramos las producciones del director que hay --> Estas hacen referencía al a3-> Emilia Clarke
+    console.log("Recorremos las producciones del actor " + a3.name + " " + a3.lastname1);
+    var productions = VSystem.getProductionsActor(a3);
+    var production = productions.next();
+    while (production.done !== true){
+        console.log ("Title: " + production.value.title + ", publication: " +production.value.publication.toLocaleDateString());		
+        production = productions.next();
+    }
+    console.log("\n######_FIN_testActorProductions_######");
+
+
+};   
+window.onload = test;
