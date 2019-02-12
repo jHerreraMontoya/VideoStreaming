@@ -372,7 +372,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}		
 
 				function compareElements(element) {
-					return (element.actor.name === actor.name || element.actor.lastname1 === actor.lastname1)
+					return (element.actor.name === actor.name && element.actor.lastname1 === actor.lastname1)
 				}
 				
 				return _actors.findIndex(compareElements);		
@@ -459,7 +459,7 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 				}		
 
 				function compareElements(element) {
-					return (element.director.name === director.name || element.director.lastname1 === director.lastname1)
+					return (element.director.name === director.name && element.director.lastname1 === director.lastname1)
 				}
 				
 				return _directors.findIndex(compareElements);		
@@ -544,6 +544,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 			};
 			//Devuelve un iterator de las producciones que hemos asignado a una categoría
             this.getProductionsCategory = function (category) {
+				if(category == null){
+					throw new NullParamException();
+				}
+
 				var categoryPosition = this.getCategoryPosition(category);
 
 				var nextIndex = 0;
@@ -633,6 +637,10 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 
 			//Devuelve un iterator de las producciones que hemos asignado a un director
             this.getProductionsDirector = function (director) {
+				if(director == null){
+					throw new NullParamException();
+				}
+				
 				var directorPosition = this.getDirectorPosition(director);
 
 				var nextIndex = 0;
@@ -723,6 +731,11 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 
 			//Devuelve un iterator de las producciones que hemos asignado a un director
             this.getProductionsActor = function (actor) {
+				
+				if(actor == null){
+					throw new NullParamException();
+				}
+
 				var actorPosition = this.getActorPosition(actor);
 
 				var nextIndex = 0;
@@ -737,7 +750,28 @@ var VideoSystem = (function () { //La función anónima devuelve un método getI
 			
 			/*FIN MÉTODOS ASSIGN Y DEASIGN JUNTO CON ITERADORES DE CATEGORÍA, DIRECTOR Y ACTOR*/
 
-			/**/
+			/*Método getCast*/
+			this.gestCast = function (production){
+				if(production == null){
+					throw new NullParamException();
+				}
+				
+				for(var i = 0; i < _actors.length; i++){//Recorremos el array de actores
+					for(var j = 0; j < _actors[i].productions.length; j++){
+						if(_actors[i].productions[j].production.title === production.title){
+
+						}
+					}
+				}
+				var nextIndex = 0;
+                return {
+                    next: function () {
+                        return nextIndex < _actors[actorPosition].productions.length ?
+                            { value: _actors[actorPosition].productions[nextIndex++], done: false } :
+                            { done: true };
+                    }
+                }
+			}
 		} //Fin constructor VideoSystem
 		VideoSystem.prototype = {}; 
 		VideoSystem.prototype.constructor = VideoSystem;
